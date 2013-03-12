@@ -12,11 +12,15 @@ call vundle#rc()
 
 Bundle "Lokaltog/vim-powerline"
 Bundle "scrooloose/syntastic"
+Bundle 'https://github.com/scrooloose/nerdtree'
 Bundle "altercation/vim-colors-solarized"
 Bundle "kien/ctrlp.vim"
 Bundle 'Shougo/neocomplcache.git'
 Bundle 'Shougo/neosnippet.git'
 Bundle 'majutsushi/tagbar'
+Bundle 'https://github.com/kchmck/vim-coffee-script.git'
+Bundle 'https://github.com/aghareza/vim-gitgrep.git'
+Bundle 'https://github.com/tpope/vim-fugitive'
 
 set t_Co=256
 
