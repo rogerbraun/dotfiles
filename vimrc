@@ -1,4 +1,5 @@
 " See here for reference http://amix.dk/vim/vimrc.html
+set shell=/bin/bash
 set encoding=utf-8
 scriptencoding utf-8
 set nocompatible
@@ -8,8 +9,11 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle 'gmarik/vundle'
+
 " Bundles
 
+Bundle 'thoughtbot/vim-rspec'
 Bundle "Lokaltog/vim-powerline"
 Bundle "scrooloose/syntastic"
 Bundle 'https://github.com/scrooloose/nerdtree'
@@ -18,6 +22,7 @@ Bundle "kien/ctrlp.vim"
 Bundle 'Shougo/neocomplcache.git'
 Bundle 'Shougo/neosnippet.git'
 Bundle 'majutsushi/tagbar'
+Bundle 'nono/vim-handlebars'
 Bundle 'https://github.com/kchmck/vim-coffee-script.git'
 Bundle 'https://github.com/aghareza/vim-gitgrep.git'
 Bundle 'https://github.com/tpope/vim-fugitive'
@@ -89,3 +94,8 @@ if has('conceal')
 endif
 
 nmap <Leader>t :TagbarToggle<CR>
+
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+let g:rspec_command = "!bundle exec rspec {spec}"
+let g:airline_powerline_fonts = 1
