@@ -6,26 +6,34 @@ set nocompatible
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-" Bundles
+" Plugins
 
-Bundle 'thoughtbot/vim-rspec'
-Bundle "Lokaltog/vim-powerline"
-Bundle "scrooloose/syntastic"
-Bundle 'https://github.com/scrooloose/nerdtree'
-Bundle "altercation/vim-colors-solarized"
-Bundle "kien/ctrlp.vim"
-Bundle 'Shougo/neocomplcache.git'
-Bundle 'Shougo/neosnippet.git'
-Bundle 'majutsushi/tagbar'
-Bundle 'nono/vim-handlebars'
-Bundle 'https://github.com/kchmck/vim-coffee-script.git'
-Bundle 'https://github.com/aghareza/vim-gitgrep.git'
-Bundle 'https://github.com/tpope/vim-fugitive'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'scrooloose/syntastic'
+Plugin 'https://github.com/scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+" Plugin 'Shougo/neocomplcache.git'
+" Plugin 'Shougo/neosnippet.git'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'majutsushi/tagbar'
+Plugin 'nono/vim-handlebars'
+" Plugin 'https://github.com/kchmck/vim-coffee-script.git'
+Plugin 'https://github.com/aghareza/vim-gitgrep.git'
+Plugin 'https://github.com/tpope/vim-fugitive'
+Plugin 'https://github.com/vim-scripts/Specky.git'
+" Plugin 'MattesGroeger/vim-bookmarks'
+
+call vundle#end()
+filetype plugin indent on
 
 set t_Co=256
 
@@ -80,22 +88,19 @@ set writebackup
 
 "" Plugin stuff
 
-let g:neocomplcache_enable_at_startup = 1
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-
-nmap <Leader>t :TagbarToggle<CR>
-
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 let g:rspec_command = "!bundle exec rspec {spec}"
 let g:airline_powerline_fonts = 1
+
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
+let g:UltiSnipsExpandTrigger="<c-s>"
+map <Leader>n :NERDTreeToggle<CR>
