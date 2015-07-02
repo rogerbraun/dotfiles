@@ -29,7 +29,9 @@ Plugin 'nono/vim-handlebars'
 " Plugin 'https://github.com/kchmck/vim-coffee-script.git'
 Plugin 'https://github.com/aghareza/vim-gitgrep.git'
 Plugin 'https://github.com/tpope/vim-fugitive'
+Plugin 'https://github.com/tpope/vim-surround.git'
 Plugin 'https://github.com/vim-scripts/Specky.git'
+Plugin 'elixir-lang/vim-elixir'
 " Plugin 'MattesGroeger/vim-bookmarks'
 
 call vundle#end()
@@ -104,3 +106,13 @@ noremap! <Right> <Esc>
 
 let g:UltiSnipsExpandTrigger="<c-s>"
 map <Leader>n :NERDTreeToggle<CR>
+
+" Send more characters for redraws
+set ttyfast
+
+" Enable mouse use in all modes
+set mouse=a
+
+" Set this to the name of your terminal that supports mouse codes.
+" Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
+set ttymouse=xterm2
